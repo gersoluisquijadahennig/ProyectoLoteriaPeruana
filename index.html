@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Combinaciones</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="./js/funciones.js"></script>
+
+</head>
+<body>
+
+<form action="">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        <div class="form-group">
+	            <label for="order_tax">Ingrese un número</label>	            
+	          
+
+	          
+	            	<input type="text" name="numero" id="numero"  class="form-control" placeholder="Ingrese un número..."/>
+	            	            
+	        </div>
+
+	        <div class="form-group">
+	            <label for="order_tax"> Inicio </label>	            
+	            	<input type="text" name="inicio" id="inicio" class="form-control" placeholder="Ingrese Inicio..."/>
+	        </div>
+
+	        <div class="form-group">
+	            <label for="order_tax">Cantidad de sumandos</label>	            
+	            	<input type="text" name="minimo" id="minimo" class="form-control" disabled="disabled" value="6" />          
+	        </div>
+
+	        <div class="form-group">
+	            <label for="order_tax"> Numeros a Excluir (Separados por comas) </label>	            
+	            	<input type="text" name="excluir" id="excluir" class="form-control" placeholder="Ingrese Numeros a Excluir..."/>
+	        </div>
+
+	        <div class="checkbox">
+				<label><input type="checkbox"  name="consecutivo" id="consecutivo" value="2">Mostrar Consecutivos</label>
+			</div>
+
+	        <div class="form-group">
+	        
+	        
+	        <input  type="button" href="javascript:;" onclick="realizaProceso($('#numero').val(), $('#inicio').val(), $('#excluir').val(), $('#consecutivo').val());return false;" value="Calcula"  class="btn btn-succes"/>
+
+	          <!--  <button type="submit" class="btn btn-succes">Calcular</button> -->
+	        </div>
+	    </div>
+	
+
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="form-group">
+	            <label>Resultados para el número: <span style="font-size: 140%;"><?php echo $numero;?></span></label>
+
+	            <div class="list-group" style="text-align: left;">
+					<div id="resultado"></div>
+				</div>
+			 </div>
+		</div>
+
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			
+	    </div>
+	</div>
+</div>
+</form>
+</body>
+</html>
